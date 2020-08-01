@@ -35,8 +35,16 @@ task perfTest {
 }
 jmReport.mustRunAfter(jmRun)
 
+task copyToBin(type: Copy) {
+    into "$buildDir/jmeter/bin"
+    from "$projectDir"
+    include "log4j2.xml"
+}
 
-group 'org.example'
+jmRun.dependsOn copyToBin
+jmGui.dependsOn copyToBin
+
+group 'org.jmetertest'
 version '1.0-SNAPSHOT'
 
 
