@@ -29,6 +29,8 @@ jmeter {
     jmTestFiles = [file("src/test/jmeter/GET_List_Of_TestPlans.jmx")]
     jmSystemPropertiesFiles = [file("src/test/jmeter/user.properties")]
     enableExtendedReports = true
+    enableReports = false
+    csvLogFile = false
     reportDir = file("${buildDir}/jmeter-reports")
 
 }
